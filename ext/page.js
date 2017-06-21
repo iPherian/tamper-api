@@ -94,7 +94,8 @@ if (typeof window.TamperApi === "undefined" || window.TamperApi === null) {
      */
     makeUrl : function(url, tamperSpec) {
       return url + "$TamperApi:" +
-             TamperApi.b64EncodeUnicode(JSON.stringify(tamperSpec));
+             TamperApi.b64EncodeUnicode(JSON.stringify(tamperSpec)) +
+             ":$TamperApi";
     },
 
     // util funcs

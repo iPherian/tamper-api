@@ -208,14 +208,14 @@ dconsole = {
 };
 
 /**
-  The client must send us a url which ends in $TamperApi:b64
+  The client must send us a url which contains $TamperApi:b64:$TamperApi
   here b64 represents a base 64 encoded string (see b64EncodeUnicode func)
   of a JSON string, the object which produced the JSON being like {TamperSpec}
   (described elsewhere). Usually handled transparently by the page-side api.
 */
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
   dconsole.debug("tamperApi: onBeforeRequest: details: ", details);
-  var match = details.url.match(/^(.*)(\$TamperApi:)([^\/]*)$/);
+  var match = details.url.match(/^(.*)(\$TamperApi:)(.*)(?::\$TamperApi)/);
   if (match === null) {
     return;
   }
