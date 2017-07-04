@@ -3,7 +3,7 @@
 
   "name": "Tamper Api",
   "description": "Modify http requests using the provided api.",
-  "version": "0.0.1",
+  "version": "0.0.2",
 
   "minimum_chrome_version": "45.0",
 
